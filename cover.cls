@@ -6,6 +6,7 @@
 % \typeout{ Template for Cover Letter }
 \RequirePackage[right=3cm,left=3cm,top=2cm,bottom=1cm]{geometry}
 \RequirePackage{ragged2e}
+\RequirePackage{xifthen}
 
 \RequirePackage{fontspec}
 \setmainfont{TeX Gyre Heros}
@@ -58,7 +59,11 @@
 \def\datewritten#1{\gdef\@datewritten{#1}}
 
 % % RECRUITER INFO ==========
-\def\suffix#1{\gdef\@suffix{#1}}
+\def\suffix#1{
+  \ifthenelse{\isempty{#1}}%
+    { \gdef\@suffix{}     }% if #1 is empty
+    { \gdef\@suffix{#1. } }% if #1 is not empty
+}
 \def\firstname#1{\gdef\@firstname{#1}}
 \def\lastname#1{\gdef\@lastname{#1}}
 \def\jobtitle#1{\gdef\@jobtitle{#1}}
@@ -86,7 +91,7 @@
 
 \def\makerecinfo{
   \begin{flushleft}
-    \@suffix. \@firstname \ \@lastname\\
+    \@suffix \@firstname \ \@lastname\\
     \@jobtitle\\
     \@companyname\\
     \@addressOne\\
@@ -98,7 +103,7 @@
 \def\makeletter{
   \begin{flushleft}
     \justify
-    Dear \@suffix. \@lastname, \vspace{10pt}\\
+    Dear \@suffix \@lastname, \vspace{10pt}\\
     \@parOne \vspace{10pt}\\
     \@parTwo \vspace{10pt}\\
     \@parThree \vspace{16pt}\\
