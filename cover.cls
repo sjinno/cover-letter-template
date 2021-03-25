@@ -8,7 +8,7 @@
 \RequirePackage{ragged2e}
 
 \RequirePackage{fontspec}
-\setmainfont{Bitter}
+\setmainfont{TeX Gyre Heros}
 
 \renewcommand{\baselinestretch}{1.15}
 \pagenumbering{gobble}
@@ -86,7 +86,7 @@
 
 \def\makerecinfo{
   \begin{flushleft}
-    \@suffix. \hspace{0.5pt} \@firstname \hspace{0.5pt} \@lastname\\
+    \@suffix. \@firstname \ \@lastname\\
     \@jobtitle\\
     \@companyname\\
     \@addressOne\\
@@ -98,7 +98,7 @@
 \def\makeletter{
   \begin{flushleft}
     \justify
-    Dear \hspace{0.5pt} \@suffix \hspace{0.5pt} \@lastname, \vspace{10pt}\\
+    Dear \@suffix. \@lastname, \vspace{10pt}\\
     \@parOne \vspace{10pt}\\
     \@parTwo \vspace{10pt}\\
     \@parThree \vspace{16pt}\\
