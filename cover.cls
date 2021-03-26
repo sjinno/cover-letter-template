@@ -29,7 +29,7 @@
   \datewritten{\today}
 
   % RECRUITER INFO ==========
-  \suffix{Mrs}
+  \suffix{Mrs} % \suffix can be optionally empty like \suffix{}.
   \firstname{Jane}
   \lastname{Smith}
   \jobtitle{Recruiter Officer}
